@@ -81,9 +81,14 @@ def age_by_year(year, join_year):
 # get the data
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
-    return pd.read_csv('sales_2018-01-01_2019-12-31.csv')
+    return pd.read_csv('/Users/joetran/OneDrive/Python/Streamlit/sales_2018-01-01_2019-12-31.csv')
 
-df = get_data()
+# df = get_data()
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+  df = pd.read_csv(uploaded_file)
+  st.write(df)
+
 
 # Process df to get cohorts
 @st.experimental_memo

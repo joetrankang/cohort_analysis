@@ -81,7 +81,7 @@ def age_by_year(year, join_year):
 # get the data
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
-    return pd.read_csv('/Users/joetran/Downloads/sales_2018-01-01_2019-12-31.csv')
+    return pd.read_csv('sales_2018-01-01_2019-12-31.csv')
 
 df = get_data()
 
